@@ -1,11 +1,13 @@
-import express from 'express';
+const express = require('express');
 const router = express.Router();
-import path from 'path';
-import fs from 'fs';
-import multer from 'multer';
-import crypto from 'crypto';
-import auth from '../middleware/auth';
-import File from '../models/File';
+const path = require('path');
+const fs = require('fs');
+const multer = require('multer');
+const crypto = require('crypto');
+const auth = require('../middleware/auth');
+const File = require('../models/File');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const uploadsDir = path.join(__dirname, '..', 'uploads');
 if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir);

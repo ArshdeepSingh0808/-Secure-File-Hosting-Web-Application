@@ -1,8 +1,8 @@
-import express from 'express';
+const express = require('express');
 const router = express.Router();
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
-import User from '../models/User';
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const User = require('../models/User');
 
 const isValidEmail = (email) => /\S+@\S+\.\S+/.test(email);
 const isStrongPassword = (pwd) => typeof pwd === 'string' && pwd.length >= 6;

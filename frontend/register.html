@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Register</h1>
+    <form id="registerForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password (min 6 chars)" required>
+      <button type="submit">Register</button>
+      <p class="error" id="error"></p>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </form>
+  </div>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    redirectIfLoggedIn();
+    const form = document.getElementById('registerForm');
+    const errorEl = document.getElementById('error');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorEl.textContent = '';
+      const username = document.getElementById('username').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+
+      if (!username || !email || !password) {
+        errorEl.textContent = 'All fields are required';
+        return;
+      }
+
+      try {
+        const res = await fetch(API_BASE + '/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, email, password })
+        });
+
+        const data = await res.json();
+        if (!res.ok) {
+          errorEl.textContent = data.message || 'Registration failed';
+        } else {
+          alert('Registered successfully. Please login.');
+          window.location.href = 'login.html';
+        }
+      } catch (err) {
+        errorEl.textContent = 'Network error';
+      }
+    });
+  </script>
+</body>
+</html>

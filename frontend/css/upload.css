@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #fdfaf3;
+}
+
+header {
+  background: #222;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a, nav button {
+  margin-left: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav button {
+  background: #ff5555;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+main {
+  padding: 30px;
+}
+
+form {
+  background: #fff;
+  padding: 20px;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+input[type="file"], select, button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+}
+
+#message {
+  margin-top: 10px;
+  min-height: 24px;
+}
