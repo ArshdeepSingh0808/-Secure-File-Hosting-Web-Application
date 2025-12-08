@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Public Downloads</title>
+  <link rel="stylesheet" href="css/downloads.css">
+</head>
+<body>
+<header>
+  <h1>Public Downloads</h1>
+  <nav>
+    <a href="upload.html">Upload</a>
+    <a href="my-files.html">My Files</a>
+    <a href="downloads.html">Downloads</a>
+    <button onclick="logout()">Logout</button>
+  </nav>
+</header>
+
+<main>
+  <table id="publicTable">
+    <thead>
+      <tr>
+        <th>Filename</th>
+        <th>Uploader</th>
+        <th>Size (MB)</th>
+        <th>Uploaded At</th>
+        <th>Download</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <p id="message"></p>
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/downloads.js"></script>
+</body>
+</html>

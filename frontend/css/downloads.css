@@ -1,0 +1,49 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  background: #ffffff;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a, nav button {
+  color: #fff;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+nav button {
+  border: 1px solid #fff;
+  background: transparent;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+main {
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background: #f9f9f9;
+}
+
+#message {
+  margin-top: 10px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Files</title>
+  <link rel="stylesheet" href="css/my-files.css">
+</head>
+<body>
+<header>
+  <h1>My Files</h1>
+  <nav>
+    <a href="upload.html">Upload</a>
+    <a href="my-files.html">My Files</a>
+    <a href="downloads.html">Downloads</a>
+    <button onclick="logout()">Logout</button>
+  </nav>
+</header>
+
+<main>
+  <table id="filesTable">
+    <thead>
+      <tr>
+        <th>Filename</th>
+        <th>Privacy</th>
+        <th>Size (MB)</th>
+        <th>Uploaded At</th>
+        <th>Share Link (private)</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <p id="message"></p>
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/my-files.js"></script>
+</body>
+</html>

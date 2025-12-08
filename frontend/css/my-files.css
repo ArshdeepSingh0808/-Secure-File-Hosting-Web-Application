@@ -1,0 +1,51 @@
+body {
+  font-family: Tahoma, sans-serif;
+  margin: 0;
+  background: #eef5ff;
+}
+
+header {
+  background: #1a3a6b;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a, nav button {
+  color: #fff;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+nav button {
+  background: #e74c3c;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+main {
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+th {
+  background: #f0f4ff;
+}
+
+.share-link {
+  width: 220px;
+}
