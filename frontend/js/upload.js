@@ -6,12 +6,14 @@ const msgEl = document.getElementById('message');
 uploadForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   msgEl.textContent = '';
+  msgEl.className = '';
 
   const fileInput = document.getElementById('file');
   const privacy = document.getElementById('privacy').value;
 
   if (!fileInput.files.length) {
     msgEl.textContent = 'Please choose a file';
+    msgEl.className = 'error';
     return;
   }
 
@@ -21,10 +23,12 @@ uploadForm.addEventListener('submit', async (e) => {
 
   if (!allowed.includes(ext)) {
     msgEl.textContent = 'Only .pdf or .mp4 allowed';
+    msgEl.className = 'error';
     return;
   }
   if (file.size > 20 * 1024 * 1024) {
     msgEl.textContent = 'File too large (max 20 MB)';
+    msgEl.className = 'error';
     return;
   }
 
@@ -41,11 +45,14 @@ uploadForm.addEventListener('submit', async (e) => {
     const data = await res.json();
     if (!res.ok) {
       msgEl.textContent = data.message || 'Upload failed';
+      msgEl.className = 'error';
     } else {
-      msgEl.textContent = 'File uploaded successfully';
+      msgEl.textContent = 'File uploaded successfully!';
+      msgEl.className = 'success';
       uploadForm.reset();
     }
   } catch (err) {
     msgEl.textContent = 'Network error';
+    msgEl.className = 'error';
   }
 });

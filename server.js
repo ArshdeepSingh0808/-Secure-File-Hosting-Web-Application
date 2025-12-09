@@ -11,7 +11,7 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, '..', 'frontend')));
+app.use(express.static(path.join(__dirname, '..', 'FILE-HOSTING/frontend')));
 
 app.use('/api', require('./backend/routes/authRoutes'));
 app.use('/api', require('./backend/routes/fileRoutes'));
@@ -19,7 +19,7 @@ app.use('/api', require('./backend/routes/fileRoutes'));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'frontend', 'login.html'));
+  res.sendFile(path.join(__dirname, '..', 'FILE-HOSTING/frontend', 'login.html'));
 });
 
 const PORT = process.env.PORT || 4000;
